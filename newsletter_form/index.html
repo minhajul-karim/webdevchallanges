@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join the list</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <link rel="stylesheet" href="index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/4ed4b00f74.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="container">
+    <div class="card main-card">
+      <i class="fas fa-times fa-lg"></i>
+      <div class="card-inner">
+        <h2>Join the List</h2>
+        <div class="card-text">
+          <i class="fas fa-bell"></i>
+          <p>Join over 5,000 VIP members to get weekly updates and special deals only available via email.</p>
+        </div>
+        <form id="myForm" autocomplete="off">
+          <div id="email-group">
+            <label for="email-input">Email Address</label>
+            <input type="text" id="email-input">
+          </div>
+          <button>Join the club</button>
+        </form>
+        <p id="unsubscribe-message">You can unsubscribe at any time</p>
+      </div>
+    </div>
+
+    <!-- Thank you card -->
+    <div class="card thanks-card">
+      <i class="fas fa-times fa-lg"></i>
+      <div class="card-inner">
+        <h2>Thank you!</h2>
+        <div class="card-text">
+          <p>You're subscribed to our latest news and updates. Welcome to the family!</p>
+        </div>
+        <button>Ok, got it</button>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>

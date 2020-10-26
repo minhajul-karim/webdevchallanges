@@ -1,0 +1,174 @@
+/*
+
+PART 1:
+
+You've been ordered to improve your company's newsletter form. 
+You can design it however you want, but the manager wants the button to
+animate both on the :hover and the :active state.
+
+1. Redesign the page (e.g. colors, positions, sizing, spacing)
+2. Improve the button's hover effect
+3. Improve thee button's click effect
+
+SKILLS:
+color, background, margin, padding, border-radius, 
+CSS pseudo selectors (:active, :hover), transform
+
+*/
+
+@keyframes dance {
+  0% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(-20px, 0);
+  }
+  66% {
+    transform: translate(20px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.7);
+  font-family: 'Poppins', sans-serif;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.card {
+  width: 343px;
+  height: 425px;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 8px 8px 15px 0px #eee, -8px 8px 15px 0px #eee;
+  border-radius: 7px;
+}
+
+.thanks-card {
+  display: none;
+  height: 220px;
+}
+
+.card-inner {
+  padding: 0 25px;
+}
+
+.fa-times {
+  float: right;
+  color: grey;
+  transition: transform 0.2s linear;
+  cursor: pointer;
+}
+
+.fa-times:hover {
+  transform: rotate(90deg);
+}
+
+.fa-bell {
+  color: #fbd000;
+  font-size: 65px;
+  margin: 0 30px 0 10px;
+  transform: rotate(10deg);
+}
+
+h2 {
+  color: #363d4d;
+}
+
+.card-text {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dotted #c9ced9;
+  padding: 15px 0;
+}
+
+.card-text p {
+  font-size: 13px;
+  color: #4f5563;
+  line-height: 1.8;
+  margin-top: -5px;
+}
+
+label[for='email-input'] {
+  color: #363d4d;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: rgba(54, 61, 77, 0.05);
+  border: 1px solid #d3d5d8;
+  border-radius: 3px;
+  padding: 12px;
+  margin-top: 8px;
+  font-size: 13px;
+  color: rgba(54, 61, 77, 1);
+}
+
+#email-group {
+  margin-top: 28px;
+  margin-bottom: 21px;
+}
+
+.run-animation {
+  animation-name: dance;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-iteration-count: 1;
+}
+
+button {
+  width: 100%;
+  background: #f4b10b;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 13px;
+  border: none;
+  border-radius: 3px;
+  transition: background-color 0.2s linear;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #f6c13c;
+  color: rgba(255, 255, 255, 1);
+}
+
+#unsubscribe-message {
+  text-align: center;
+  color: #d3d5d9;
+  font-size: 13px;
+  margin-top: 25px;
+}
+
+button:active {
+  background-color: #dc9f0a;
+}
+
+@media all and (max-width: 400px) {
+  .card {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .fa-bell {
+    display: none;
+  }
+}

@@ -14,11 +14,12 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 40px;
+  padding: 10px;
 }
 
 #header h1 {
   font-weight: bold;
-  font-size: 70px;
+  font-size: 6vw;
 }
 
 .container {
@@ -28,5 +29,14 @@ body {
 }
 
 .item a {
-  font-size: 25px;
+  font-size: 2vw;
+}
+
+@media all and (max-width: 768px) {
+  #header h1 {
+    font-size: 8vh;
+  }
+  .item a {
+    font-size: 4vw;
+  }
 }

@@ -1,0 +1,146 @@
+/*
+DESCRIPTION:
+
+You challenge is to create a responsive flip card. 
+The user should be able to hover or click on the card 
+and it needs to flip on the other side to reveal what's on the back. 
+
+Remember: the card needs to be responsive - as I change the size of my window, 
+the card needs to adjust to the new size and look natural. 
+
+transform-style, transform, transition, 
+perspective, pseudo-classes, cursor, 
+min- max- prefixes, ems and rems, 
+*/
+
+:root {
+  --brand-color: #303030;
+  --primary-text: #494949;
+  --secondary-text: #4f4f4f;
+  --title-color: #2a2a2a;
+}
+
+body,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  background-color: #a4a4a4;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+
+.front {
+  background-color: #fff;
+  padding: 45px;
+}
+
+.fa-cube {
+  font-size: 20px;
+  color: var(--brand-color);
+  font-size: 1.5em;
+  margin-top: 3px;
+}
+
+.brand {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.brand-name {
+  text-transform: uppercase;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-left: 11px;
+  letter-spacing: 2px;
+  color: var(--brand-color);
+}
+
+.introduction {
+  text-transform: capitalize;
+  position: relative;
+  margin-top: 95px;
+  margin-bottom: 22px;
+}
+
+.name {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: var(--primary-text);
+  line-height: 0.2em;
+}
+
+.name-hr {
+  width: 117px;
+  position: absolute;
+  left: 0;
+  top: 34px;
+  border: 2px solid var(--title-color);
+}
+
+.introduction-hr {
+  border: 1px solid darkgrey;
+}
+
+.secondary-text {
+  font-size: 0.9em;
+  color: var(--secondary-text);
+  line-height: 0.1em;
+}
+
+.title-case {
+  font-weight: bold;
+  font-size: 0.9em;
+  color: var(--title-color);
+  text-transform: capitalize;
+}
+
+.footer {
+  margin-top: 25px;
+}
+
+.footer p,
+li {
+  font-size: 0.9em;
+}
+
+.footer p {
+  line-height: 0;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-nav li::after {
+  content: '|';
+  margin-left: 3px;
+  margin-right: 4px;
+  /* margin-left: 7px;
+  margin-right: 7px; */
+}
+
+.footer-nav li:last-child::after {
+  content: '';
+}
+
+/*
+DETAILED INSTRUCTIONS
+1. Choose the required pseudo-class
+2. Figure out how to flip a card on the required event
+3. Make it responsive!
+
+*/

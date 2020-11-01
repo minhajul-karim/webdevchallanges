@@ -18,6 +18,9 @@ min- max- prefixes, ems and rems,
   --primary-text: #494949;
   --secondary-text: #4f4f4f;
   --title-color: #2a2a2a;
+  --facebook-color: #3b579d;
+  --twitter-color: #00aced;
+  --linkedin-color: #007bb6;
 }
 
 body,
@@ -129,13 +132,95 @@ li {
   content: '|';
   margin-left: 3px;
   margin-right: 4px;
-  /* margin-left: 7px;
-  margin-right: 7px; */
 }
 
 .footer-nav li:last-child::after {
   content: '';
 }
+
+/* Back */
+
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-nav {
+  width: 250px;
+  height: 35px;
+  background-color: #404040;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 141px;
+}
+
+.social-nav li a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.social-nav i {
+  font-size: 1.5em;
+}
+
+/* social icons */
+.fa-facebook-f {
+  color: var(--facebook-color);
+}
+.fa-twitter {
+  color: var(--twitter-color);
+}
+.fa-linkedin {
+  color: var(--linkedin-color);
+}
+
+.fb,
+.fa-facebook-f,
+.tw,
+.fa-twitter,
+.li,
+.fa-linkedin {
+  transition-duration: 0.5s;
+}
+
+/* Hover on fb icon */
+.fb:hover {
+  background-color: var(--facebook-color);
+}
+
+.fb:hover .fa-facebook-f {
+  color: #fff;
+}
+
+/* Hover on twitter icon */
+.tw:hover {
+  background-color: var(--twitter-color);
+}
+
+.tw:hover .fa-twitter {
+  color: #fff;
+}
+
+/* Hover on linkedin icon */
+.li:hover {
+  background-color: var(--linkedin-color);
+}
+
+.li:hover .fa-linkedin {
+  color: #fff;
+}
+
+/* Flip actions */
 
 /*
 DETAILED INSTRUCTIONS

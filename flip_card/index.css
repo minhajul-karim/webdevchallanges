@@ -39,6 +39,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   font-size: 16px;
 }
 
@@ -258,8 +259,9 @@ li {
   color: #fff;
 }
 
-.card:hover {
-  transform: rotateY(180deg);
+.instruction-text {
+  color: #062e91;
+  margin-top: 2em;
 }
 
 /*
@@ -267,5 +269,4 @@ DETAILED INSTRUCTIONS
 1. Choose the required pseudo-class
 2. Figure out how to flip a card on the required event
 3. Make it responsive!
-
 */

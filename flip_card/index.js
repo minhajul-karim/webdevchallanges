@@ -13,3 +13,8 @@ a video reveal or a music album cover with a song player at the back.
     - a video reveal/song card: start playing the video/song
 
 */
+
+const card = document.querySelector('.card')
+card.addEventListener('click', () => {
+  card.classList.toggle('is-flipped')
+})

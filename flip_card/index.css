@@ -3,7 +3,7 @@ DESCRIPTION:
 
 You challenge is to create a responsive flip card. 
 The user should be able to hover or click on the card 
-and it needs to flip on the other side to reveal what's on the back. 
+and it needs to flip on the other side to reveal what's on the back-face. 
 
 Remember: the card needs to be responsive - as I change the size of my window, 
 the card needs to adjust to the new size and look natural. 
@@ -32,7 +32,7 @@ li {
   font-family: 'Roboto', sans-serif;
 }
 
-.container {
+body {
   background-color: #a4a4a4;
   width: 100%;
   height: 100vh;
@@ -42,9 +42,38 @@ li {
   font-size: 16px;
 }
 
-.front {
+.scene {
+  width: 565px;
+  height: 310px;
+  perspective: 1000px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: transform 0.7s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.front-face {
   background-color: #fff;
-  padding: 45px;
+}
+
+.back-face {
+  transform: rotateY(180deg);
+}
+
+.is-flipped {
+  transform: rotateY(180deg);
 }
 
 .fa-cube {
@@ -58,6 +87,7 @@ li {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin: 50px 0 0 50px;
 }
 
 .brand-name {
@@ -75,6 +105,7 @@ li {
   position: relative;
   margin-top: 95px;
   margin-bottom: 22px;
+  margin-left: 50px;
 }
 
 .name {
@@ -88,12 +119,17 @@ li {
   width: 117px;
   position: absolute;
   left: 0;
-  top: 34px;
+  top: 31px;
   border: 2px solid var(--title-color);
+  z-index: 1;
 }
 
 .introduction-hr {
   border: 1px solid darkgrey;
+  width: 82%;
+  position: absolute;
+  left: 50px;
+  top: 205px;
 }
 
 .secondary-text {
@@ -110,7 +146,8 @@ li {
 }
 
 .footer {
-  margin-top: 25px;
+  margin-top: 45px;
+  margin-left: 50px;
 }
 
 .footer p,
@@ -124,36 +161,37 @@ li {
 
 .footer-nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .footer-nav li::after {
   content: '|';
-  margin-left: 3px;
-  margin-right: 4px;
+  margin: 0 12px 0 10px;
 }
 
 .footer-nav li:last-child::after {
   content: '';
 }
 
-/* Back */
+/* Back face */
 
-.back {
+.back-face {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #404040;
+}
+
+.social-nav {
+  display: flex;
+  flex: 1;
   justify-content: center;
   align-items: center;
 }
 
-.social-nav {
-  width: 250px;
-  height: 35px;
-  background-color: #404040;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 141px;
+.social-nav li {
+  margin-right: 1.5em;
 }
 
 .social-nav li a {
@@ -220,7 +258,9 @@ li {
   color: #fff;
 }
 
-/* Flip actions */
+.card:hover {
+  transform: rotateY(180deg);
+}
 
 /*
 DETAILED INSTRUCTIONS

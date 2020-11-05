@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
   <link rel="stylesheet" href="style.css">
-  <script src="index.pack.js"></script>
+  <!-- <script src="index.pack.js"></script> -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   <title>Logo Editor</title>
 </head>
 
@@ -26,31 +26,43 @@
       <div class="col-md-6">
         <form>
           <div class="form-group">
-            <label for="brand-name">Brand name</label>
-            <input type="text" class="form-control" id="brand-name" aria-describedby="brandNameHelp">
+            <label for="brand-name-input">Brand name</label>
+            <input type="text" class="form-control" id="brand-name-input" placeholder="Name of your brand"
+              aria-describedby="brandNameHelp">
           </div>
           <div class="form-group">
-            <label for="background-color">Background color</label>
-            <input type="text" class="form-control" id="background-color" aria-describedby="backgroundHelp">
+            <label for="background-color-input">Background color</label>
+            <input type="text" class="form-control" id="background-color-input" placeholder="e.g. #243665 or green"
+              aria-describedby="backgroundHelp">
           </div>
           <div class="form-group">
-            <label for="text-color">Text color</label>
-            <input type="text" class="form-control" id="text-color" aria-describedby="textColorHelp">
+            <label for="text-color-input">Font color</label>
+            <input type="text" class="form-control" id="text-color-input" placeholder="e.g. #FFFFFF"
+              aria-describedby="textColorHelp">
+          </div>
+          <div class="form-group">
+            <label for="logo-icon-shape">Shape</label>
+            <select class="form-control" id="logo-icon-shape">
+              <option value="square">Square</option>
+              <option value="rounded">Rounded</option>
+              <option value="circle">Circle</option>
+            </select>
           </div>
         </form>
       </div>
       <div class="col-md-6">
         <div class="logo-card d-flex justify-content-center align-items-center">
           <div class="logo-icon d-flex justify-content-center align-items-center">
-            <h1>B</h1>
+            <h1></h1>
           </div>
-          <div class="logo-text">
-            <p>Name</p>
+          <div class="brand-name">
+            <p></p>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <script src="./index.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>

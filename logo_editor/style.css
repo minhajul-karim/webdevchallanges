@@ -3,7 +3,7 @@ body {
   padding: 0;
   list-style: none;
   font-size: 16px;
-  font-family: 'Roboto', sans-serif !important;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .header-container {
@@ -25,24 +25,26 @@ body {
 /* Logo card */
 .logo-card {
   height: 100%;
-  background-color: darkslateblue;
+  background-color: #f4efea;
+  border-radius: 15px;
 }
 
 .logo-icon {
   width: 100px;
   height: 100px;
-  background-color: yellowgreen;
+  border-radius: 0px;
+  background-color: #7d141d;
   margin-right: 10px;
 }
 
 .logo-icon h1 {
   font-size: 4.5rem;
-  font-weight: bold;
+  color: #f4efea;
 }
 
-.logo-text p {
-  color: #fff;
-  font-size: 3rem;
+.brand-name p {
+  color: #7d141d;
+  font-size: 3.5rem;
 }
 
 @media all and (max-width: 768px) {
@@ -61,11 +63,12 @@ body {
   .logo-icon {
     width: 70px;
     height: 70px;
+    margin-right: 10px;
   }
   .logo-icon h1 {
     font-size: 3rem;
   }
-  .logo-text p {
+  .brand-name p {
     font-size: 2rem;
   }
 }

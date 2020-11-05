@@ -1,31 +1,55 @@
-/*
-DESCRIPTION:
-In this challenge you are asked to change how the logo looks when you click 
-the three buttons. This is an excellent challenge for styling elements in 
-JavaScript, not CSS.
+document.addEventListener('DOMContentLoaded', () => {
+  const brandNameInputField = document.getElementById('brand-name-input')
+  const backgroundColorInputField = document.getElementById(
+    'background-color-input'
+  )
+  const textColorInputField = document.getElementById('text-color-input')
+  const brandNameText = document.querySelector('.brand-name p')
+  const logoIcon = document.querySelector('.logo-icon')
+  const logoIconText = document.querySelector('.logo-icon h1')
+  const logoCard = document.querySelector('.logo-card')
 
-If the user clicks the first button, I want the text on the 
-logo to become black. If the user clicks the second button, 
-I want the logo background to become red. If the user clicks the third button,
-I would like you to add a shadow to the logo.
+  // Initialize logo with some default values
+  const name = 'Caver'
+  brandNameInputField.value = name
+  brandNameText.textContent = brandNameInputField.value
+  logoIconText.textContent = name.charAt(0)
+  backgroundColorInputField.value = '#f4efea'
+  textColorInputField.value = '#7d141d'
 
-event listeners, getElementById, operators
+  // Update brand name
+  brandNameInputField.addEventListener('keyup', (event) => {
+    brandNameText.textContent = brandNameInputField.value
+    logoIconText.textContent = brandNameInputField.value.charAt(0)
+  })
 
-*/
+  // Update background color
+  backgroundColorInputField.addEventListener('keyup', (event) => {
+    logoCard.style.backgroundColor = backgroundColorInputField.value
+    // Change text color of logo icon
+    logoIconText.style.color = backgroundColorInputField.value
+  })
 
-// Write your code here 👇
+  // Update text color
+  textColorInputField.addEventListener('keyup', (event) => {
+    brandNameText.style.color = textColorInputField.value
+    // Change background color of logo icon box
+    logoIcon.style.backgroundColor = textColorInputField.value
+  })
 
-
-/*
-
-DETAILED INSTRUCTIONS
-1. pick out the neccesary elements from the HTML
-2. use eventlisteners on the buttons to envoke functions
-3. change the properties of the logo using JavaScript
-
-STRETCH GOALS:
-- If any of the buttons are clicked a second time, I want the change they 
-  are responsible for to be reversed.
-- Can you improve the overall design?
-
-*/
+  // Update shape of logo icon box
+  document
+    .getElementById('logo-icon-shape')
+    .addEventListener('change', (event) => {
+      switch (event.target.value) {
+        case 'square':
+          logoIcon.style.borderRadius = '0px'
+          break
+        case 'rounded':
+          logoIcon.style.borderRadius = '10px'
+          break
+        default:
+          logoIcon.style.borderRadius = '50%'
+      }
+    })
+})

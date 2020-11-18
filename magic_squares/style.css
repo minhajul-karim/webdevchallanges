@@ -1,0 +1,80 @@
+@keyframes shake {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+body {
+  background-color: #e5d6f3;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 250px;
+  height: 300px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container div {
+  width: 70px;
+  height: 70px;
+  background-color: purple;
+  margin: 5px;
+  border-radius: 5px;
+  box-shadow: 2px 6px red;
+}
+
+.click {
+  font-family: 'Indie Flower', cursive;
+  font-size: 25px;
+  font-weight: bold;
+  color: yellow;
+  text-align: center;
+  cursor: pointer;
+  /* animation */
+  animation-name: shake;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1s;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-iteration-count: infinite;
+}
+
+.reset-button {
+  box-shadow: inset 0px 1px 0px 0px #54a3f7;
+  background: linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+  background-color: #007dc1;
+  border-radius: 3px;
+  border: 1px solid #124d77;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 11px 16px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #154682;
+}
+.reset-button:hover {
+  background: linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+  background-color: #0061a7;
+}

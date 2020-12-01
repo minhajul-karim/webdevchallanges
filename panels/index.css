@@ -1,0 +1,40 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Write your code here 👇 */
+.panels {
+  width: 90%;
+  height: 90vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.panel {
+  height: 100%;
+  flex: 1;
+  transition: flex 1s ease-in-out;
+}
+
+.first {
+  background-color: teal;
+}
+
+.second {
+  background-color: tomato;
+}
+
+.third {
+  background-color: chartreuse;
+}
+
+.zoom-in {
+  flex: 3;
+}

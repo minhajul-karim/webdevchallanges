@@ -1,40 +1,89 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
+  background-color: #000;
+}
+
+.panels-container {
+  height: 100vh;
   display: flex;
-  flex: 1;
   justify-content: center;
   align-items: center;
 }
 
-/* Write your code here 👇 */
 .panels {
-  width: 90%;
-  height: 90vh;
+  width: 80%;
+  height: 600px;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  border: 10px solid #fff;
 }
 
 .panel {
   height: 100%;
   flex: 1;
-  transition: flex 1s ease-in-out;
+  transition: flex 0.5s ease-in-out;
+  border-right: 10px solid #fff;
+}
+
+.panel:nth-child(3) {
+  border-right: 0;
 }
 
 .first {
-  background-color: teal;
+  background: url(./assets/apple/macbook3.jpg) center center no-repeat;
 }
 
 .second {
-  background-color: tomato;
+  background: url(./assets/apple/iphone.jpg) center center no-repeat;
 }
 
 .third {
-  background-color: chartreuse;
+  background: url(./assets/apple/apple_watch.jpg) center center no-repeat;
+}
+
+.first,
+.second,
+.third {
+  background-size: cover;
 }
 
 .zoom-in {
-  flex: 3;
+  flex: 6;
+}
+
+@media all and (max-width: 768px) {
+  .panels {
+    width: 95%;
+    flex-direction: column;
+    border: 5px solid #fff;
+    border-right: 0;
+  }
+  .panel {
+    width: 100%;
+    border-right: 5px solid #fff;
+    border-bottom: 5px solid #fff;
+  }
+  .panel:nth-child(3) {
+    border-right: 5px solid #fff;
+    border-bottom: 0;
+  }
+  .first {
+    background: url(./assets/apple/macbook3-600.jpg) center center no-repeat;
+  }
+  .second {
+    background: url(./assets/apple/iphone-600.jpg) center center no-repeat;
+  }
+  .third {
+    background: url(./assets/apple/apple_watch-600.jpg) center center no-repeat;
+  }
 }

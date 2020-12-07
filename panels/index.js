@@ -1,23 +1,12 @@
 /* Write your code here 👇 */
 const panels = document.querySelectorAll('.panel')
-let prevPanel = null
 document.addEventListener('DOMContentLoaded', () => {
   panels.forEach((currentDiv, index) => {
     currentDiv.addEventListener('click', (event) => {
-      let currentPanel = index
-      if (prevPanel === currentPanel) {
-        console.log(`${currentPanel + 1} panel was clicked twice`)
-      }
-      prevPanel = index
-      // Remove all instances of zoom-in class
-      panels.forEach((node) => {
-        node.classList.remove('zoom-in')
-      })
-      event.target.classList.add('zoom-in')
+      event.target.classList.toggle('zoom-in')
     })
   })
 })
-
 /*
 
 STRETCH GOALS:

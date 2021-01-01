@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tweet Component</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <textarea type="text" id="string" placeholder="What's happening?"></textarea>
+    <div class="footer">
+      <div id="counterFooter">
+      <span id="character-remaining">140</span>/140
+    </div>
+      <button id="btn">Tweet</button>
+    </div>
+  </div>
+  <div class="features">
+    <h2>Features</h2>
+    <ul>
+      <li>Display the number of remaining characters in real-time.</li>
+      <li>Turn counter text into the red if only 20 or fewer characters are remaining.</li>
+      <li>Disable the tweet button when users type more than 140 characters.</li>
+      <li>Display the number of additional characters.</li>
+    </ul>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>

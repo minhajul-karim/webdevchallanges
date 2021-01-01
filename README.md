@@ -11,4 +11,5 @@ A collection of web development challanges that I try to solve every week.
 5. [Content Card](https://minhajul-karim.github.io/webdevchallanges/content_card/index.html)
 6. [Magic Squares](https://minhajul-karim.github.io/webdevchallanges/magic_squares/index.html)
 7. [Short Changed](https://minhajul-karim.github.io/webdevchallanges/short_changed/index.html)
-7. [Tweet Component](https://minhajul-karim.github.io/webdevchallanges/tweet_component/index.html)
+7. [Panels](https://minhajul-karim.github.io/webdevchallanges/panels/index.html)
+8. [Tweet Component](https://minhajul-karim.github.io/webdevchallanges/tweet_component/index.html)

@@ -1,6 +1,6 @@
 # Web Dev Challanges
 
-A collection of web development challanges that I try to solve every week.
+A collection of web development challenges that I try to solve every week.
 
 ## Collection
 

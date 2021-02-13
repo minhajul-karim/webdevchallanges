@@ -1,0 +1,18 @@
+/* 
+  Game container: #333333
+  Snake: #ffffff
+  Food: #ff234f
+*/
+
+.game-container {
+  width: 600px;
+  height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell {
+  width: 30px;
+  height: 30px;
+  background: #333333;
+}

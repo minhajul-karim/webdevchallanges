@@ -20,5 +20,8 @@
 
 .snake {
   background: #ffffff;
-  /* border: 1px solid #333333; */
+}
+
+.food {
+  background: #ff234f;
 }

@@ -36,8 +36,22 @@ const move = () => {
   const tail = snake.pop()
   cells[tail].classList.remove('snake')
   const newHead = snake[0] + steps
+  // Add new head
   snake.unshift(newHead)
   cells[newHead].classList.add('snake')
+
+  // Check if snake ate food
+  const head = snake[0]
+  if (head === foodIndex) {
+    // Increase snake's length
+    snake.push(tail)
+    cells[tail].classList.add('snake')
+    cells[head].classList.remove('food')
+    cells[head].classList.add('snake')
+    generateFood()
+    score += 1
+    scoreText.textContent = score
+  }
 }
 
 // Control snake with keyboard
@@ -58,7 +72,7 @@ document.addEventListener('keyup', (event) => {
   }
 })
 
-intervalId = setInterval(move, 500)
+intervalId = setInterval(move, 300)
 
 // Generate food
 const generateFood = () => {

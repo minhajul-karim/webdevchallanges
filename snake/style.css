@@ -51,6 +51,13 @@ body {
   left: 30%;
 }
 
+.control-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
 .btn {
   background: #ff234f;
   border: unset;
@@ -61,6 +68,6 @@ body {
   cursor: pointer;
 }
 
-.sore-section {
+.score-section {
   text-align: right;
 }

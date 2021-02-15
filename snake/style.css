@@ -4,12 +4,23 @@
   Food: #ff234f
 */
 
+body {
+  font-family: 'Ranchers', cursive;
+  font-size: 25px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .game-container {
   width: 640px;
   height: 640px;
   display: flex;
   flex-wrap: wrap;
   border: 10px solid purple;
+  position: relative;
 }
 
 .cell {
@@ -27,6 +38,29 @@
   background: #ff234f;
 }
 
-.head {
-  background: green;
+.game-over-text {
+  position: absolute;
+  color: #fff;
+  font-size: 50px;
+  top: -100%;
+  left: -100%;
+}
+
+.diplay-game-over-text {
+  top: 35%;
+  left: 30%;
+}
+
+.btn {
+  background: #ff234f;
+  border: unset;
+  padding: 10px 20px;
+  font-family: 'Ranchers', cursive;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.sore-section {
+  text-align: right;
 }

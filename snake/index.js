@@ -1,5 +1,5 @@
 const gameContainer = document.querySelector('.game-container')
-const scoreText = document.querySelector('.score-text')
+const scoreText = document.getElementById('score-text')
 const rows = 20
 const snake = [2, 1, 0]
 const cells = []
@@ -7,7 +7,7 @@ let steps = 1
 let intervalId = null
 let foodIndex = null
 let score = 0
-let speed = 500
+let speed = 1000
 
 // Create cells
 const cell = document.createElement('div')
@@ -26,7 +26,9 @@ for (let i = 0; i < rows * rows; i++) {
   4. Create food (done)
   5. Eat food (done)
   6. Increase snake (done)
-  7. Handle gameover cases
+  7. Handle gameover cases (done)
+  8. Display game over.
+  9. Restart game.
 */
 
 // Draw snake
@@ -41,6 +43,7 @@ const move = () => {
     || ((snake[0] + rows >= rows * rows) && steps === rows) // Hits bottom wall
     || ((snake[0] < rows) && steps === -rows) // Hits top wall
   ) {
+    document.querySelector('.game-over-text').classList.add('diplay-game-over-text')
     return clearInterval(intervalId)
   }
   // Move snake x steps

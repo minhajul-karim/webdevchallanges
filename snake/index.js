@@ -1,3 +1,16 @@
+/*
+  TODOS
+  1. Create snake (done)
+  2. Auto move snake (done)
+  3. Move snake with key (done)
+  4. Create food (done)
+  5. Eat food (done)
+  6. Increase snake (done)
+  7. Handle gameover cases (done)
+  8. Display game over (done)
+  9. Restart game (done)
+  10. Game over when snake touches itself (done)
+*/
 const gameContainer = document.querySelector('.game-container')
 const scoreText = document.getElementById('score-text')
 const startButton = document.querySelector('.btn')
@@ -9,7 +22,7 @@ let steps = 1
 let intervalId = null
 let foodIndex = null
 let score = 0
-let speed = 1000
+let speed = null
 
 // Create cells
 const cell = document.createElement('div')
@@ -20,24 +33,17 @@ for (let i = 0; i < rows * rows; i++) {
   gameContainer.appendChild(cell)
 }
 
-/*
-  TODOS
-  1. Create snake (done)
-  2. Auto move snake (done)
-  3. Move snake with key (done)
-  4. Create food (done)
-  5. Eat food (done)
-  6. Increase snake (done)
-  7. Handle gameover cases (done)
-  8. Display game over (done)
-  9. Restart game
-*/
-
 // Draw snake
 const drawSnake = () => {
   snake.forEach(index => cells[index].classList.add('snake'))
 }
 drawSnake()
+
+// Generate food
+const generateFood = () => {
+  foodIndex = Math.floor((Math.random() * 400))
+  cells[foodIndex].classList.add('food')
+}
 
 // Move snake
 const move = () => {
@@ -47,6 +53,7 @@ const move = () => {
     || (snake[0] % rows === 0 && steps === -1) // Hits left wall
     || ((snake[0] + rows >= rows * rows) && steps === rows) // Hits bottom wall
     || ((snake[0] < rows) && steps === -rows) // Hits top wall
+    || (cells[snake[0] + steps].classList.contains('snake')) // Hits itself 
   ) {
     gemeOverText.classList.add('diplay-game-over-text')
     return clearInterval(intervalId)
@@ -102,19 +109,15 @@ startButton.addEventListener('click', () => {
   snake.forEach(index => cells[index].classList.remove('snake'))
   // Remove previous food
   if (foodIndex) cells[foodIndex].classList.remove('food')
+  // Hide game over text
   gemeOverText.classList.remove('diplay-game-over-text')
+  // Reset game state
   snake = [2, 1, 0]
   drawSnake()
   steps = 1
   score = 0
-  speed = 200
+  speed = 500
   generateFood()
   scoreText.textContent = score
   intervalId = setInterval(move, speed)
 })
-
-// Generate food
-const generateFood = () => {
-  foodIndex = Math.floor((Math.random() * 400))
-  cells[foodIndex].classList.add('food')
-}

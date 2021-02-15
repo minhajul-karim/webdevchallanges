@@ -1,8 +1,10 @@
 const gameContainer = document.querySelector('.game-container')
 const scoreText = document.getElementById('score-text')
+const startButton = document.querySelector('.btn')
+const gemeOverText = document.querySelector('.game-over-text')
 const rows = 20
-const snake = [2, 1, 0]
 const cells = []
+let snake = [2, 1, 0]
 let steps = 1
 let intervalId = null
 let foodIndex = null
@@ -27,12 +29,15 @@ for (let i = 0; i < rows * rows; i++) {
   5. Eat food (done)
   6. Increase snake (done)
   7. Handle gameover cases (done)
-  8. Display game over.
-  9. Restart game.
+  8. Display game over (done)
+  9. Restart game
 */
 
 // Draw snake
-snake.forEach(index => cells[index].classList.add('snake'))
+const drawSnake = () => {
+  snake.forEach(index => cells[index].classList.add('snake'))
+}
+drawSnake()
 
 // Move snake
 const move = () => {
@@ -43,7 +48,7 @@ const move = () => {
     || ((snake[0] + rows >= rows * rows) && steps === rows) // Hits bottom wall
     || ((snake[0] < rows) && steps === -rows) // Hits top wall
   ) {
-    document.querySelector('.game-over-text').classList.add('diplay-game-over-text')
+    gemeOverText.classList.add('diplay-game-over-text')
     return clearInterval(intervalId)
   }
   // Move snake x steps
@@ -91,12 +96,25 @@ document.addEventListener('keyup', (event) => {
   }
 })
 
-intervalId = setInterval(move, speed)
+// Start/restart button
+startButton.addEventListener('click', () => {
+  // Remove previous snake
+  snake.forEach(index => cells[index].classList.remove('snake'))
+  // Remove previous food
+  if (foodIndex) cells[foodIndex].classList.remove('food')
+  gemeOverText.classList.remove('diplay-game-over-text')
+  snake = [2, 1, 0]
+  drawSnake()
+  steps = 1
+  score = 0
+  speed = 200
+  generateFood()
+  scoreText.textContent = score
+  intervalId = setInterval(move, speed)
+})
 
 // Generate food
 const generateFood = () => {
   foodIndex = Math.floor((Math.random() * 400))
   cells[foodIndex].classList.add('food')
 }
-
-generateFood()

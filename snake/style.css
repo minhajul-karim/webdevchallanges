@@ -9,6 +9,7 @@
   height: 640px;
   display: flex;
   flex-wrap: wrap;
+  border: 10px solid purple;
 }
 
 .cell {
@@ -24,4 +25,8 @@
 
 .food {
   background: #ff234f;
+}
+
+.head {
+  background: green;
 }

@@ -7,10 +7,11 @@ let steps = 1
 let intervalId = null
 let foodIndex = null
 let score = 0
+let speed = 500
 
 // Create cells
 const cell = document.createElement('div')
-for (let i = 1; i <= rows * rows; i++) {
+for (let i = 0; i < rows * rows; i++) {
   const cell = document.createElement('div')
   cell.className = 'cell'
   cells.push(cell)
@@ -22,10 +23,10 @@ for (let i = 1; i <= rows * rows; i++) {
   1. Create snake (done)
   2. Auto move snake (done)
   3. Move snake with key (done)
-  4. Create food
-  5. Increase snake
-  6. Handle gameover cases
-  7. Eat food
+  4. Create food (done)
+  5. Eat food (done)
+  6. Increase snake (done)
+  7. Handle gameover cases
 */
 
 // Draw snake
@@ -33,17 +34,27 @@ snake.forEach(index => cells[index].classList.add('snake'))
 
 // Move snake
 const move = () => {
+  // Check if snake has hit wall
+  if (
+    ((snake[0] + 1) % rows === 0 && steps === 1) // Hits right wall
+    || (snake[0] % rows === 0 && steps === -1) // Hits left wall
+    || ((snake[0] + rows >= rows * rows) && steps === rows) // Hits bottom wall
+    || ((snake[0] < rows) && steps === -rows) // Hits top wall
+  ) {
+    return clearInterval(intervalId)
+  }
+  // Move snake x steps
   const tail = snake.pop()
   cells[tail].classList.remove('snake')
   const newHead = snake[0] + steps
   // Add new head
   snake.unshift(newHead)
   cells[newHead].classList.add('snake')
-
+  
   // Check if snake ate food
   const head = snake[0]
   if (head === foodIndex) {
-    // Increase snake's length
+    // Increment snake's length
     snake.push(tail)
     cells[tail].classList.add('snake')
     cells[head].classList.remove('food')
@@ -51,6 +62,11 @@ const move = () => {
     generateFood()
     score += 1
     scoreText.textContent = score
+    if (speed > 100) {
+      speed -= 100
+      clearInterval(intervalId)
+      intervalId = setInterval(move, speed)
+    }
   }
 }
 
@@ -72,7 +88,7 @@ document.addEventListener('keyup', (event) => {
   }
 })
 
-intervalId = setInterval(move, 300)
+intervalId = setInterval(move, speed)
 
 // Generate food
 const generateFood = () => {
